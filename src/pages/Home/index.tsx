@@ -1,18 +1,22 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Heading from '../../components/Heading'
 import Button from '../../components/ui/button'
 
 const Home = () => {
-  const click = () => {
-    console.log('====================================');
-    console.log('cliquei');
-    console.log('====================================');
-  }
-
   return (
     <>
       <Heading title={"Hello Trainer!"} />
-      <Button click={click} title={"Login"} />
+      <div>
+        <ul>
+          <li>
+            <Link to="/login" replace={true}>Login</Link>
+          </li>
+          <li>
+            <Link to="/register" replace={true}>Register</Link>
+          </li>
+        </ul>
+      </div>
     </>
   )
 }

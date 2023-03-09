@@ -6,7 +6,9 @@ import {
 } from "react-router-dom";
 import './index.css';
 import Home from './pages/Home';
+import Login from './pages/Login';
 import Pokemons from './pages/Pokemons/pokemons';
+import Register from './pages/Register';
 
 const router = createBrowserRouter([
   {
@@ -15,11 +17,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/register",
-    element: <div>Register Here!</div>
+    element: <Register/>
   },
   {
     path: "/login",
-    element: <div>Log in Here!</div>
+    element: <Login/>
   },
   {
     path: "/*",

@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Login = () => {
+const Register = () => {
   return (
     <div>
-      <h2>Log in here</h2>
+      <h2>Register here</h2>
       <div>
         <ul>
           <li>
-            <Link to="/register" replace={true}>Register</Link>
+            <Link to="/login" replace={true}>Log in</Link>
           </li>
           <li>
             <Link to="/" replace={true}>Home</Link>
@@ -19,4 +19,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Register
