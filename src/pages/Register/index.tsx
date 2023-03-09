@@ -1,11 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import RegisterForm from '../../components/form/registerForm'
+
 const Register = () => {
   return (
-    <div>
+    <div className='container mt-5'>
       <h2>Register here</h2>
-      <div>
+
+      <RegisterForm />
+
+      <div className='mt-5'>
         <ul>
           <li>
             <Link to="/login" replace={true}>Log in</Link>
