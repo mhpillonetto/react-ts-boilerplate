@@ -1,11 +1,18 @@
-import React from 'react'
+import styled from 'styled-components'
 
-const button = () => {
+type ButtonProps = {
+  click: any,
+  title: string
+}
+
+const Button = ({ click, title = "title" }: ButtonProps ) => {
   return (
-    <div>
-      
-    </div>
+    <button onClick={() => click()}>{title}</button>
   )
 }
 
-export default button
+const StyledButton = styled(Button)`
+  color: blue
+`
+
+export default StyledButton

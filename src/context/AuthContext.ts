@@ -1,3 +1,7 @@
-const AuthContext = {}
+export type UserType = {
+    id: string,
+    username: string,
+    password: string
+}
 
-export default AuthContext
+const initState: UserType[] = []

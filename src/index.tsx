@@ -5,17 +5,25 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css';
-
-import Root from './pages/Root/root';
+import Home from './pages/Home';
+import Pokemons from './pages/Pokemons/pokemons';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Root />
+    path: "/pokemons",
+    element: <Pokemons/>
   },
   {
     path: "/register",
     element: <div>Register Here!</div>
+  },
+  {
+    path: "/login",
+    element: <div>Log in Here!</div>
+  },
+  {
+    path: "/*",
+    element: <Home />
   },
 ])
 

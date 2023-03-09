@@ -4,7 +4,7 @@ import Heading from "../../components/Heading";
 import List from "../../components/List";
 import { Section } from "../../components/Section";
 
-function Root() {
+function Pokemons() {
   const [count, setCount] = useState(1)
 
   return (
@@ -20,4 +20,4 @@ function Root() {
   )
 }
 
-export default Root;
+export default Pokemons;
