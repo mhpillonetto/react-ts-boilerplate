@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Counter from "./components/Counter";
-import Heading from "./components/Heading";
-import List from "./components/List";
-import { Section } from "./components/Section";
+import Counter from "../../components/Counter";
+import Heading from "../../components/Heading";
+import List from "../../components/List";
+import { Section } from "../../components/Section";
 
-function App() {
+function Root() {
   const [count, setCount] = useState(1)
 
   return (
@@ -20,4 +20,4 @@ function App() {
   )
 }
 
-export default App;
+export default Root;
