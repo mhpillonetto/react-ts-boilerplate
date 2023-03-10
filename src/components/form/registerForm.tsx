@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useCallback, useState } from 'react'
 
 interface IFormState {
@@ -19,10 +20,10 @@ const RegisterForm = () => {
   const handleInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const targetInput = event.currentTarget
 
-    const {value, name} = targetInput
+    const { value, name } = targetInput
 
     setFormState({
-      ... formState,
+      ...formState,
       [name]: value,
     })
   }, [formState])
@@ -42,19 +43,30 @@ const RegisterForm = () => {
       return
     }
 
-    setIsLoggedIn(true)
+    axios.post<JSON>("http://localhost:3500/register", {
+        user: username,
+        pwd: password
+      })
+      .then(function (response) {
+        setIsLoggedIn(true)
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
-  },[formState]);
+
+  }, [formState]);
 
 
   if (isLoggedIn) {
-    return(
+    return (
       <div>
         <h1>New Trainer Created :)</h1>
       </div>
     )
   }
-  
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="mb-3">
