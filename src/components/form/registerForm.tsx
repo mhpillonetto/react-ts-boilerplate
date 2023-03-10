@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useCallback, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 interface IFormState {
   username: string
@@ -29,6 +30,7 @@ const RegisterForm = () => {
   }, [formState])
 
 
+  const navigate = useNavigate();
 
   const handleSubmit = useCallback((event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -44,11 +46,12 @@ const RegisterForm = () => {
     }
 
     axios.post<JSON>("http://localhost:3500/register", {
-        user: username,
-        pwd: password
-      })
+      user: username,
+      pwd: password
+    })
       .then(function (response) {
         setIsLoggedIn(true)
+        navigate('/', { replace: true });
         console.log(response);
       })
       .catch(function (error) {
@@ -60,11 +63,8 @@ const RegisterForm = () => {
 
 
   if (isLoggedIn) {
-    return (
-      <div>
-        <h1>New Trainer Created :)</h1>
-      </div>
-    )
+
+
   }
 
   return (
