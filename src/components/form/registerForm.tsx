@@ -16,8 +16,6 @@ const RegisterForm = () => {
     password: ""
   })
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   const handleInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const targetInput = event.currentTarget
 
@@ -39,9 +37,6 @@ const RegisterForm = () => {
 
     if (!email || !username || !password) {
       window.alert("Fill all the required fields")
-
-      setIsLoggedIn(false)
-
       return
     }
 
@@ -50,22 +45,14 @@ const RegisterForm = () => {
       pwd: password
     })
       .then(function (response) {
-        setIsLoggedIn(true)
         navigate('/', { replace: true });
         console.log(response);
       })
       .catch(function (error) {
         console.log(error);
-      });
-
+      })
 
   }, [formState]);
-
-
-  if (isLoggedIn) {
-
-
-  }
 
   return (
     <form onSubmit={handleSubmit}>
